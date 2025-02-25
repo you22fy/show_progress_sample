@@ -1,16 +1,18 @@
 # show_progress_app
 
-A new Flutter project.
+API通信の進捗状況を表示するアプリ
 
-## Getting Started
+## 動かし方
+### webサーバーを起動
+Webサーバーは`server/server.dart`を実行します。
+```bash
+dart run server/server.dart
+```
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Flutterアプリを起動
+Flutterアプリは`lib/main.dart`を実行します。
+どちらもlocalで実行するのでCORSの設定が必要です。
+CORSの設定はserver.dartで行なっており、localhost:3000からのアクセスを許可しています。
+```bash
+flutter run -d web-server --web-port 3000
+```
